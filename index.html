@@ -20,7 +20,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  transition: background 0.6s ease, color 0.6s ease;
+  transition: background 0.6s ease, color 0.6s ease, transform 0.4s ease;
 }
 
 /* ====== الألوان ====== */
@@ -46,9 +46,10 @@ body {
 }
 
 .subtitle {
-  font-size: 20px;
-  margin-top: 20px;
-  max-width: 700px;
+  font-size: 24px; /* لا يوجد خط صغير */
+  margin-top: 24px;
+  max-width: 800px;
+  line-height: 1.6;
 }
 
 .big-word {
@@ -72,11 +73,10 @@ button:hover {
   opacity: 0.7;
 }
 
-/* زر صغير */
 .small-btn {
-  font-size: 14px;
-  padding: 6px 18px;
-  margin-top: 20px;
+  font-size: 15px;
+  padding: 8px 22px;
+  margin-top: 30px;
 }
 </style>
 </head>
@@ -91,9 +91,10 @@ const scene = document.getElementById("scene");
 
 function render() {
 
-  /* ===== المشهد 1: العنوان ===== */
+  /* ===== المشهد 1 ===== */
   if (step === 0) {
     scene.className = "scene scene-black";
+    scene.style.transform = "translateX(0)";
     scene.innerHTML = `
       <div class="title">
         A STRANGE DAY
@@ -103,7 +104,7 @@ function render() {
     `;
   }
 
-  /* ===== المشهد 2: العمل والملل ===== */
+  /* ===== المشهد 2 ===== */
   else if (step === 1) {
     scene.className = "scene scene-black";
     scene.innerHTML = `
@@ -117,7 +118,7 @@ function render() {
     `;
   }
 
-  /* ===== المشهد 3: TOCK الأحمر ===== */
+  /* ===== المشهد 3 ===== */
   else if (step === 2) {
     scene.className = "scene scene-red";
     scene.innerHTML = `
@@ -126,7 +127,7 @@ function render() {
     `;
   }
 
-  /* ===== المشهد 4: العودة + الجملة ===== */
+  /* ===== المشهد 4 ===== */
   else if (step === 3) {
     scene.className = "scene scene-black";
     scene.innerHTML = `
@@ -137,6 +138,24 @@ function render() {
         It’s 4 PM.<br>
         And I can get the hell out of here.”
       </div>
+      <button class="small-btn" onclick="lookRight()">Look to your right</button>
+    `;
+  }
+
+  /* ===== المشهد 5 ===== */
+  else if (step === 4) {
+    scene.className = "scene scene-black";
+    scene.innerHTML = `
+      <div class="subtitle">
+        التقت أعين السيد شرقي بخاصة صديقه إلياس<br>
+        وقالا في نفس الوقت
+      </div>
+
+      <div class="subtitle" style="margin-top:40px;">
+        YO boy lrt.s walk out togather
+      </div>
+
+      <button class="small-btn" onclick="next()">غادر</button>
     `;
   }
 }
@@ -144,6 +163,15 @@ function render() {
 function next() {
   step++;
   render();
+}
+
+function lookRight() {
+  scene.style.transform = "translateX(-40px)";
+  setTimeout(() => {
+    scene.style.transform = "translateX(0)";
+    step++;          // الانتقال الحقيقي
+    render();
+  }, 350);
 }
 
 render();
