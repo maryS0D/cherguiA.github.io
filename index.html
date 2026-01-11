@@ -90,7 +90,6 @@ const scene = document.getElementById("scene");
 
 function render() {
 
-  /* المشهد 1 */
   if (step === 0) {
     scene.className = "scene scene-black";
     scene.innerHTML = `
@@ -102,7 +101,6 @@ function render() {
     `;
   }
 
-  /* المشهد 2 */
   else if (step === 1) {
     scene.className = "scene scene-black";
     scene.innerHTML = `
@@ -116,7 +114,6 @@ function render() {
     `;
   }
 
-  /* المشهد 3 */
   else if (step === 2) {
     scene.className = "scene scene-red";
     scene.innerHTML = `
@@ -125,7 +122,6 @@ function render() {
     `;
   }
 
-  /* المشهد 4 */
   else if (step === 3) {
     scene.className = "scene scene-black";
     scene.innerHTML = `
@@ -140,7 +136,6 @@ function render() {
     `;
   }
 
-  /* المشهد 5 */
   else if (step === 4) {
     scene.className = "scene scene-black";
     scene.innerHTML = `
@@ -157,7 +152,6 @@ function render() {
     `;
   }
 
-  /* ===== المشهد 6 (الجديد) ===== */
   else if (step === 5) {
     scene.className = "scene scene-black";
     scene.innerHTML = `
@@ -180,6 +174,30 @@ function render() {
       </div>
 
       <button class="small-btn" onclick="next()">اقترب منه</button>
+    `;
+  }
+
+  /* ===== المشهد 7 ===== */
+  else if (step === 6) {
+    scene.className = "scene scene-red";
+    scene.innerHTML = `
+      <div class="subtitle">
+        نظر أيوب من حوله،
+        لكنه لم يرَ صديقه إلياس،
+        ولا يعلم أين اختفى.
+      </div>
+
+      <div class="subtitle" style="margin-top:30px;">
+        لكن الشيطان
+        كان واقفًا أمامه بالفعل.
+      </div>
+
+      <div class="subtitle" style="margin-top:40px;">
+        “مرحبا… سمعت من صديق أنه عيد ميلادك.
+        هل تريد أن تفعل شيئًا مرحًا حيال الأمر؟”
+      </div>
+
+      <button class="small-btn" onclick="next()">الحق به</button>
     `;
   }
 }
