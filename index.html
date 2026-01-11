@@ -22,11 +22,9 @@ body {
   transition: background 0.6s ease, color 0.6s ease, transform 0.4s ease;
 }
 
-/* الألوان */
 .scene-black { background: black; color: red; }
 .scene-red { background: red; color: black; }
 
-/* النصوص */
 .title { font-size: 42px; letter-spacing: 2px; }
 .title span { font-size: 56px; display: block; }
 
@@ -43,7 +41,6 @@ body {
   letter-spacing: 8px;
 }
 
-/* الأزرار */
 button {
   margin-top: 40px;
   padding: 12px 28px;
@@ -59,6 +56,17 @@ button:hover { opacity: 0.7; }
   font-size: 15px;
   padding: 8px 22px;
   margin-top: 30px;
+}
+
+/* أزرار البطاقات */
+.card-buttons {
+  display: flex;
+  gap: 30px;
+  margin-top: 40px;
+}
+.card-buttons button {
+  font-size: 22px;
+  padding: 14px 28px;
 }
 </style>
 </head>
@@ -137,12 +145,10 @@ function render() {
     scene.innerHTML = `
       <div class="subtitle">
         كان السيد شرقي يترنّح مع صديقه في الطرقات،
-        فقد أرادا الاحتفال بأيوب الكبير
-        وبعيد ميلاده.
+        فقد أرادا الاحتفال بأيوب الكبير وبعيد ميلاده.
       </div>
       <div class="subtitle">
-        لكن في آخر الشارع ظهر شيءٌ لم يكن متوقعًا.
-        <br><br>
+        لكن في آخر الشارع ظهر شيءٌ لم يكن متوقعًا.<br><br>
         شيطان.
       </div>
       <button class="small-btn" onclick="next()">اقترب منه</button>
@@ -167,7 +173,6 @@ function render() {
     `;
   }
 
-  /* ===== المشهد 8 ===== */
   else if (step === 7) {
     scene.className = "scene scene-red";
     scene.innerHTML = `
@@ -177,26 +182,20 @@ function render() {
       </div>
 
       <div class="subtitle">
-        وجد الجميع يرحّب به…
-        <br>
-        راقصات…
-        <br>
-        ساقيات…
-        <br>
-        نادلات…
+        راقصات… ساقيات… نادلات…
       </div>
 
       <div class="subtitle">
         كان هو الرجل الوحيد هناك،
-        حاوته آلاف الأجساد العارية من كل صوب،
-        وكادت النظرات المتحمسة أن تثقب ملابسه.
+        تحيط به آلاف الأجساد العارية،
+        وكادت النظرات أن تثقب ملابسه.
       </div>
 
       <div class="subtitle" style="margin-top:40px;">
         he gets anybody's eyes undressing him
       </div>
 
-      <div class="subtitle" style="margin-top:20px;">
+      <div class="subtitle">
         لكن الجو خانق بالفعل
       </div>
 
@@ -204,23 +203,57 @@ function render() {
     `;
   }
 
-  /* ===== المشهد 9 ===== */
   else if (step === 8) {
     scene.className = "scene scene-black";
     scene.innerHTML = `
       <div class="subtitle">
-        قال أيوب:
-        <br><br>
+        قال أيوب:<br><br>
         “What do you want?”
       </div>
 
-      <div class="subtitle" style="margin-top:30px;">
-        ابتسم الشيطان وقال ببساطة:
-        <br><br>
+      <div class="subtitle">
+        ابتسم الشيطان وقال:<br><br>
         “I just want you to enjoy, buddy.”
       </div>
 
       <button class="small-btn" onclick="next()">cool</button>
+    `;
+  }
+
+  /* ===== المشهد 10 ===== */
+  else if (step === 9) {
+    scene.className = "scene scene-black";
+    scene.innerHTML = `
+      <div class="subtitle">
+        قال الشيطان وهو يمدّ يده:
+      </div>
+
+      <div class="subtitle">
+        “It’s your lucky day.<br>
+        I usually give people one Joker card…<br>
+        But I’ll give you three.<br><br>
+        Choose the one that feels like you.”
+      </div>
+
+      <button class="small-btn" onclick="next()">حسنًا</button>
+    `;
+  }
+
+  /* ===== المشهد 11 ===== */
+  else if (step === 10) {
+    scene.className = "scene scene-red";
+    scene.innerHTML = `
+      <div class="subtitle">
+        لكن لا تثق بحدسك…
+        <br>
+        فالبشر عادةً يخسرون الكثير بسببه.
+      </div>
+
+      <div class="card-buttons">
+        <button onclick="chooseCard(1)">1</button>
+        <button onclick="chooseCard(2)">2</button>
+        <button onclick="chooseCard(3)">3</button>
+      </div>
     `;
   }
 }
@@ -239,8 +272,12 @@ function lookRight() {
   }, 350);
 }
 
+function chooseCard(n) {
+  alert("You chose card " + n + "…");
+  // هنا لاحقًا سنربط كل بطاقة بمسار مختلف
+}
+
 render();
 </script>
-
 </body>
 </html>
