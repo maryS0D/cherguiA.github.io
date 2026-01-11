@@ -23,32 +23,18 @@ body {
 }
 
 /* الألوان */
-.scene-black {
-  background: black;
-  color: red;
-}
-
-.scene-red {
-  background: red;
-  color: black;
-}
+.scene-black { background: black; color: red; }
+.scene-red { background: red; color: black; }
 
 /* النصوص */
-.title {
-  font-size: 42px;
-  letter-spacing: 2px;
-}
-
-.title span {
-  font-size: 56px;
-  display: block;
-}
+.title { font-size: 42px; letter-spacing: 2px; }
+.title span { font-size: 56px; display: block; }
 
 .subtitle {
   font-size: 24px;
-  margin-top: 24px;
-  max-width: 800px;
-  line-height: 1.6;
+  margin-top: 26px;
+  max-width: 850px;
+  line-height: 1.7;
 }
 
 .big-word {
@@ -67,10 +53,7 @@ button {
   color: inherit;
   cursor: pointer;
 }
-
-button:hover {
-  opacity: 0.7;
-}
+button:hover { opacity: 0.7; }
 
 .small-btn {
   font-size: 15px;
@@ -81,7 +64,6 @@ button:hover {
 </head>
 
 <body>
-
 <div id="scene" class="scene scene-black"></div>
 
 <script>
@@ -143,11 +125,9 @@ function render() {
         التقت أعين السيد شرقي بخاصة صديقه إلياس<br>
         وقالا في نفس الوقت
       </div>
-
       <div class="subtitle" style="margin-top:40px;">
         YO boy let’s walk out together
       </div>
-
       <button class="small-btn" onclick="next()">غادر</button>
     `;
   }
@@ -160,44 +140,87 @@ function render() {
         فقد أرادا الاحتفال بأيوب الكبير
         وبعيد ميلاده.
       </div>
-
-      <div class="subtitle" style="margin-top:30px;">
-        لكن في آخر الشارع،
-        ظهر هناك شيءٌ ما.
-      </div>
-
-      <div class="subtitle" style="margin-top:30px;">
-        شيطان.
+      <div class="subtitle">
+        لكن في آخر الشارع ظهر شيءٌ لم يكن متوقعًا.
         <br><br>
-        ولأول مرة،
-        اعتقد أيوب أنه قابل الشيطان حقًا.
+        شيطان.
       </div>
-
       <button class="small-btn" onclick="next()">اقترب منه</button>
     `;
   }
 
-  /* ===== المشهد 7 ===== */
   else if (step === 6) {
     scene.className = "scene scene-red";
     scene.innerHTML = `
       <div class="subtitle">
-        نظر أيوب من حوله،
-        لكنه لم يرَ صديقه إلياس،
+        نظر أيوب من حوله، لكنه لم يرَ صديقه إلياس،
         ولا يعلم أين اختفى.
       </div>
+      <div class="subtitle">
+        لكن الشيطان كان واقفًا أمامه بالفعل.
+      </div>
+      <div class="subtitle">
+        “Hello… I heard from a friend it’s your birthday.
+        Wanna do something fun about it?”
+      </div>
+      <button class="small-btn" onclick="next()">الحق به</button>
+    `;
+  }
 
-      <div class="subtitle" style="margin-top:30px;">
-        لكن الشيطان
-        كان واقفًا أمامه بالفعل.
+  /* ===== المشهد 8 ===== */
+  else if (step === 7) {
+    scene.className = "scene scene-red";
+    scene.innerHTML = `
+      <div class="subtitle">
+        دخل السيد شرقي مع ما يعتقد أنه الشيطان
+        إلى حانةٍ لم يرها من قبل.
+      </div>
+
+      <div class="subtitle">
+        وجد الجميع يرحّب به…
+        <br>
+        راقصات…
+        <br>
+        ساقيات…
+        <br>
+        نادلات…
+      </div>
+
+      <div class="subtitle">
+        كان هو الرجل الوحيد هناك،
+        حاوته آلاف الأجساد العارية من كل صوب،
+        وكادت النظرات المتحمسة أن تثقب ملابسه.
       </div>
 
       <div class="subtitle" style="margin-top:40px;">
-        “مرحبا… سمعت من صديق أنه عيد ميلادك.
-        هل تريد أن تفعل شيئًا مرحًا حيال الأمر؟”
+        he gets anybody's eyes undressing him
       </div>
 
-      <button class="small-btn" onclick="next()">الحق به</button>
+      <div class="subtitle" style="margin-top:20px;">
+        لكن الجو خانق بالفعل
+      </div>
+
+      <button class="small-btn" onclick="next()">تحدث مع الشيطان</button>
+    `;
+  }
+
+  /* ===== المشهد 9 ===== */
+  else if (step === 8) {
+    scene.className = "scene scene-black";
+    scene.innerHTML = `
+      <div class="subtitle">
+        قال أيوب:
+        <br><br>
+        “What do you want?”
+      </div>
+
+      <div class="subtitle" style="margin-top:30px;">
+        ابتسم الشيطان وقال ببساطة:
+        <br><br>
+        “I just want you to enjoy, buddy.”
+      </div>
+
+      <button class="small-btn" onclick="next()">cool</button>
     `;
   }
 }
