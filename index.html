@@ -5,7 +5,6 @@
 <title>A Strange Day</title>
 
 <style>
-/* ====== الأساس ====== */
 body {
   margin: 0;
   font-family: "Georgia", serif;
@@ -23,7 +22,7 @@ body {
   transition: background 0.6s ease, color 0.6s ease, transform 0.4s ease;
 }
 
-/* ====== الألوان ====== */
+/* الألوان */
 .scene-black {
   background: black;
   color: red;
@@ -34,7 +33,7 @@ body {
   color: black;
 }
 
-/* ====== النصوص ====== */
+/* النصوص */
 .title {
   font-size: 42px;
   letter-spacing: 2px;
@@ -46,7 +45,7 @@ body {
 }
 
 .subtitle {
-  font-size: 24px; /* لا يوجد خط صغير */
+  font-size: 24px;
   margin-top: 24px;
   max-width: 800px;
   line-height: 1.6;
@@ -58,7 +57,7 @@ body {
   letter-spacing: 8px;
 }
 
-/* ====== الأزرار ====== */
+/* الأزرار */
 button {
   margin-top: 40px;
   padding: 12px 28px;
@@ -91,10 +90,9 @@ const scene = document.getElementById("scene");
 
 function render() {
 
-  /* ===== المشهد 1 ===== */
+  /* المشهد 1 */
   if (step === 0) {
     scene.className = "scene scene-black";
-    scene.style.transform = "translateX(0)";
     scene.innerHTML = `
       <div class="title">
         A STRANGE DAY
@@ -104,7 +102,7 @@ function render() {
     `;
   }
 
-  /* ===== المشهد 2 ===== */
+  /* المشهد 2 */
   else if (step === 1) {
     scene.className = "scene scene-black";
     scene.innerHTML = `
@@ -118,7 +116,7 @@ function render() {
     `;
   }
 
-  /* ===== المشهد 3 ===== */
+  /* المشهد 3 */
   else if (step === 2) {
     scene.className = "scene scene-red";
     scene.innerHTML = `
@@ -127,7 +125,7 @@ function render() {
     `;
   }
 
-  /* ===== المشهد 4 ===== */
+  /* المشهد 4 */
   else if (step === 3) {
     scene.className = "scene scene-black";
     scene.innerHTML = `
@@ -142,7 +140,7 @@ function render() {
     `;
   }
 
-  /* ===== المشهد 5 ===== */
+  /* المشهد 5 */
   else if (step === 4) {
     scene.className = "scene scene-black";
     scene.innerHTML = `
@@ -152,10 +150,36 @@ function render() {
       </div>
 
       <div class="subtitle" style="margin-top:40px;">
-        YO boy lrt.s walk out togather
+        YO boy let’s walk out together
       </div>
 
       <button class="small-btn" onclick="next()">غادر</button>
+    `;
+  }
+
+  /* ===== المشهد 6 (الجديد) ===== */
+  else if (step === 5) {
+    scene.className = "scene scene-black";
+    scene.innerHTML = `
+      <div class="subtitle">
+        كان السيد شرقي يترنّح مع صديقه في الطرقات،
+        فقد أرادا الاحتفال بأيوب الكبير
+        وبعيد ميلاده.
+      </div>
+
+      <div class="subtitle" style="margin-top:30px;">
+        لكن في آخر الشارع،
+        ظهر هناك شيءٌ ما.
+      </div>
+
+      <div class="subtitle" style="margin-top:30px;">
+        شيطان.
+        <br><br>
+        ولأول مرة،
+        اعتقد أيوب أنه قابل الشيطان حقًا.
+      </div>
+
+      <button class="small-btn" onclick="next()">اقترب منه</button>
     `;
   }
 }
@@ -169,7 +193,7 @@ function lookRight() {
   scene.style.transform = "translateX(-40px)";
   setTimeout(() => {
     scene.style.transform = "translateX(0)";
-    step++;          // الانتقال الحقيقي
+    step++;
     render();
   }, 350);
 }
