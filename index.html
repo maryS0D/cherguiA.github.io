@@ -58,7 +58,6 @@ button:hover { opacity: 0.7; }
   margin-top: 30px;
 }
 
-/* أزرار البطاقات */
 .card-buttons {
   display: flex;
   gap: 30px;
@@ -187,7 +186,7 @@ function render() {
 
       <div class="subtitle">
         كان هو الرجل الوحيد هناك،
-        تحيط به آلاف الأجساد العارية،
+        تحيط به آلاف الأجساد،
         وكادت النظرات أن تثقب ملابسه.
       </div>
 
@@ -220,7 +219,6 @@ function render() {
     `;
   }
 
-  /* ===== المشهد 10 ===== */
   else if (step === 9) {
     scene.className = "scene scene-black";
     scene.innerHTML = `
@@ -239,21 +237,70 @@ function render() {
     `;
   }
 
-  /* ===== المشهد 11 ===== */
   else if (step === 10) {
     scene.className = "scene scene-red";
     scene.innerHTML = `
       <div class="subtitle">
-        لكن لا تثق بحدسك…
-        <br>
+        لكن لا تثق بحدسك…<br>
         فالبشر عادةً يخسرون الكثير بسببه.
       </div>
 
       <div class="card-buttons">
-        <button onclick="chooseCard(1)">1</button>
-        <button onclick="chooseCard(2)">2</button>
-        <button onclick="chooseCard(3)">3</button>
+        <button onclick="chooseCard()">1</button>
+        <button onclick="chooseCard()">2</button>
+        <button onclick="chooseCard()">3</button>
       </div>
+    `;
+  }
+
+  /* ===== الوشم ===== */
+  else if (step === 11) {
+    scene.className = "scene scene-black";
+    scene.innerHTML = `
+      <div class="subtitle">
+        أوه… لقد اخترت شيئًا بسيطًا.
+      </div>
+      <div class="subtitle">
+        وشم.
+      </div>
+      <div class="subtitle">
+        هل هذا ما كنت تبحث عنه يا سيد شرقي؟
+      </div>
+      <button class="small-btn" onclick="next()">
+        أنت تتدخل في أشياء لا تعنيك
+      </button>
+    `;
+  }
+
+  /* ===== شيطان غاضب ===== */
+  else if (step === 12) {
+    scene.className = "scene scene-red";
+    scene.innerHTML = `
+      <div class="subtitle">
+        <!-- صورة الشيطان الغاضب ستضاف لاحقًا -->
+      </div>
+      <button class="small-btn" onclick="next()">...</button>
+    `;
+  }
+
+  /* ===== الإفاقة ===== */
+  else if (step === 13) {
+    scene.className = "scene scene-black";
+    scene.innerHTML = `
+      <div class="subtitle">
+        وجد السيد شرقي نفسه خارج الحانة،
+        ملقىً على الأرض.
+      </div>
+
+      <div class="subtitle">
+        كان إلياس يهزه:<br><br>
+        صديقي… هل أنت بخير؟<br>
+        لقد فقدت وعيك فجأة.
+      </div>
+
+      <button class="small-btn">
+        أنا… أنا بخير
+      </button>
     `;
   }
 }
@@ -272,9 +319,9 @@ function lookRight() {
   }, 350);
 }
 
-function chooseCard(n) {
-  alert("You chose card " + n + "…");
-  // هنا لاحقًا سنربط كل بطاقة بمسار مختلف
+function chooseCard() {
+  step = 11;
+  render();
 }
 
 render();
