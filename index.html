@@ -327,7 +327,7 @@ function render() {
         لا تضغط نفسك.<br>
         حاول الاسترخاء هذه الأمسية.
       </div>
-      <button class="small-btn" onclick="next()">
+      <button class="small-btn" onclick="goToSharedScene()">
         سأحرص على هذا
       </button>
     `;
@@ -351,8 +351,21 @@ function render() {
         HORNY
       </div>
 
-      <button class="small-btn" style="margin-top:40px;" onclick="next()">
+      <button class="small-btn" style="margin-top:40px;" onclick="goToSharedScene()">
         hahahaha……
+      </button>
+    `;
+  }
+
+  else if (step === 17) {
+    scene.className = "scene scene-black";
+    scene.innerHTML = `
+      <div class="subtitle" style="font-size:28px;">
+        افترق السيد شرقي عن صديقه،<br>
+        وقد كان مشوش الذهن.
+      </div>
+      <button class="small-btn" style="margin-top:50px;">
+        اذهب إلى المنزل
       </button>
     `;
   }
@@ -384,6 +397,11 @@ function workStress() {
 
 function noSport() {
   step = 16;
+  render();
+}
+
+function goToSharedScene() {
+  step = 17;
   render();
 }
 
