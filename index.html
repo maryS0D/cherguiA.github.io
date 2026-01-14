@@ -310,12 +310,42 @@ function render() {
         لقد غبت عن الوعي لبضع دقائق.
       </div>
       <div class="card-buttons" style="margin-top:50px;">
-        <button onclick="next()" style="font-size:18px; padding:14px 32px;">
+        <button onclick="workStress()" style="font-size:18px; padding:14px 32px;">
           لقد أثّر علي ضغط العمل
         </button>
-        <button onclick="next()" style="font-size:18px; padding:14px 32px;">
+        <button onclick="noSport()" style="font-size:18px; padding:14px 32px;">
           لم أمارس منذ مدة
         </button>
+      </div>
+    `;
+  }
+
+  else if (step === 15) {
+    scene.className = "scene scene-black";
+    scene.innerHTML = `
+      <div class="subtitle" style="font-size:28px;">
+        لا تضغط نفسك.<br>
+        حاول الاسترخاء هذه الأمسية.
+      </div>
+      <button class="small-btn" onclick="next()">
+        سأحرص على هذا
+      </button>
+    `;
+  }
+
+  else if (step === 16) {
+    scene.className = "scene scene-red";
+    scene.innerHTML = `
+      <img src="./images/smirk.jpg">
+      <div class="big-word" style="font-size:56px; margin-top:20px;">
+        i knew it…
+      </div>
+      <div class="subtitle">
+        you are not you<br>
+        when you are
+      </div>
+      <div class="big-word" style="font-size:64px; margin-top:10px;">
+        HORNY
       </div>
     `;
   }
@@ -337,6 +367,16 @@ function lookRight() {
 
 function chooseCard() {
   step = 11;
+  render();
+}
+
+function workStress() {
+  step = 15;
+  render();
+}
+
+function noSport() {
+  step = 16;
   render();
 }
 
