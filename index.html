@@ -388,13 +388,42 @@ function render() {
         <img src="./images/house.jpg">
       </div>
 
-      <button class="small-btn">
+      <button class="small-btn" onclick="next()">
         ادخل المنزل
       </button>
     `;
   }
+
+ else if (step === 19) {
+  scene.className = "scene scene-pink";
+  scene.innerHTML = `
+    <div class="decor">☁️ 🌸 🤍 ☁️ 🌸 🤍</div>
+
+    <div class="subtitle">
+      دخل السيد شرقي المنزل،<br>
+      وكان المكان هادئًا والأنوار خافتة.<br>
+      اتجه إلى غرفة نومه، فوجد زوجته<br>
+      استيقظت من النوم على وقع خطوات أقدامه.
+    </div>
+
+    <div class="subtitle" style="margin-top:30px; font-size:26px;">
+      daddy are you home ?
+    </div>
+
+    <img src="./images/mary.jpg">
+
+    <div class="buttons-row">
+      <button>قبّل رأسها</button>
+      <button>استلقِ بجانبها</button>
+    </div>
+
+    <div class="decor" style="margin-top:30px;">
+      🤍 🌸 ☁️ 🤍 🌸 ☁️
+    </div>
+  `;
+  }
 }
- 
+  
 function next() {
   step++;
   render();
