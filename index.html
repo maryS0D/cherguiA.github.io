@@ -334,19 +334,28 @@ function render() {
   }
 
   else if (step === 16) {
-    scene.className = "scene scene-red";
-    scene.innerHTML = `
-      <img src="./images/smirk.jpg">
-      <div class="big-word" style="font-size:56px; margin-top:20px;">
-        i knew it…
-      </div>
-      <div class="subtitle">
-        you are not you<br>
-        when you are
-      </div>
-      <div class="big-word" style="font-size:64px; margin-top:10px;">
-        HORNY
-      </div>
+scene.className = "scene scene-red";
+scene.innerHTML = `
+  <img src="./images/smirk.jpg">
+
+  <div class="big-word" style="font-size:56px; margin-top:20px;">
+    i knew it…
+  </div>
+
+  <div class="subtitle">
+    you are not you<br>
+    when you are
+  </div>
+
+  <div class="big-word" style="font-size:64px; margin-top:10px;">
+    HORNY
+  </div>
+
+  <button class="small-btn" style="margin-top:40px;" onclick="next()">
+    hahahaha……
+  </button>
+`;
+
     `;
   }
 }
