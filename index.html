@@ -298,13 +298,38 @@ function render() {
         صديقي… هل أنت بخير؟<br>
         لقد فقدت وعيك فجأة.
       </div>
-      <button class="small-btn">
+      <button class="small-btn" onclick="next()">
         أنا… أنا بخير
       </button>
     `;
   }
 }
 
+  else if (step === 14) {
+  scene.className = "scene scene-black";
+  scene.innerHTML = `
+    <div class="subtitle" style="font-size:28px;">
+      هل أنت متأكد أنك بخير؟<br>
+      لقد غبت عن الوعي لبضع دقائق.
+    </div>
+
+    <div class="card-buttons" style="margin-top:50px;">
+      <button onclick="next()" style="
+        font-size:18px;
+        padding:14px 32px;
+      ">
+        لقد أثّر علي ضغط العمل
+      </button>
+
+      <button onclick="next()" style="
+        font-size:18px;
+        padding:14px 32px;
+      ">
+        لم أمارس منذ مدة
+      </button>
+    </div>
+  `;
+}
 function next() {
   step++;
   render();
