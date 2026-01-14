@@ -364,13 +364,38 @@ function render() {
         افترق السيد شرقي عن صديقه،<br>
         وقد كان مشوش الذهن.
       </div>
-      <button class="small-btn" style="margin-top:50px;">
+      <button class="small-btn" onclick="next()">
         اذهب إلى المنزل
       </button>
     `;
   }
 }
 
+   else if (step === 18) {
+    scene.className = "scene scene-black";
+    scene.innerHTML = `
+      <div class="subtitle">
+        وصل السيد شرقي المنزل بصعوبة،<br>
+        خصوصًا أن بصره كان يصبح ضبابيًا أحيانًا<br>
+        عندما كان يقود سيارته
+      </div>
+
+      <div class="subtitle">
+        Rolls-Royce Phantom
+      </div>
+
+      <div class="images-row">
+        <img src="./images/car.jpg">
+        <img src="./images/house.jpg">
+      </div>
+
+      <button class="small-btn">
+        ادخل المنزل
+      </button>
+    `;
+  }
+}
+ 
 function next() {
   step++;
   render();
