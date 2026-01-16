@@ -506,8 +506,32 @@ else if (step === 22) {
       ...
     </button>
   `;
-  }
 }  
+
+else if (step === 23) {
+  scene.className = "scene scene-red";
+  scene.innerHTML = `
+    <div class="subtitle" style="color:black; font-size:26px;">
+      بدأ السيد شرقي يحسّ باللهيب<br>
+      يندفع داخل شرايينه.
+    </div>
+
+    <img
+      src="./images/banana.jpg"
+      style="
+        max-width:42%;
+        max-height:55vh;
+        margin-top:40px;
+        border-radius:8px;
+      "
+    >
+
+    <button class="small-btn" style="margin-top:45px;" onclick="next()">
+      ...
+    </button>
+  `;
+  }
+} 
   
 function next() {
   step++;
