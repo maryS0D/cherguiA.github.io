@@ -452,7 +452,35 @@ function render() {
       🤍 🌸 ☁️ 🤍 🌸 ☁️
     </div>
   `;
-  }
+}
+
+else if (step === 21) {
+  scene.className = "scene scene-red";
+  scene.innerHTML = `
+    <div class="subtitle" style="color:black;">
+      توجّهت مريم إلى الزاوية في الغرفة،<br>
+      بعد أن أفلتت من حضن السيد شرقي.
+    </div>
+
+    <div class="subtitle" style="margin-top:30px; font-style:italic; color:black;">
+      "how about your birthday prisent"
+    </div>
+
+    <button
+      style="
+        margin-top:50px;
+        padding:14px 34px;
+        font-size:18px;
+        border:1px solid black;
+        background:transparent;
+        color:black;
+        cursor:pointer;
+      "
+      onclick="next()"
+    >
+      aren't you in a mood for it !؟
+    </button>
+  `;
 }
   
 function next() {
