@@ -482,6 +482,32 @@ else if (step === 21) {
     </button>
   `;
 }
+
+else if (step === 22) {
+  scene.className = "scene scene-red";
+  scene.innerHTML = `
+    <div class="subtitle" style="color:black;">
+      أخذت عينا السيد شرقي تتّسعان،<br>
+      على أثر كشف مريم لطياتها.
+    </div>
+
+    <div class="subtitle" style="margin-top:26px; color:black;">
+      لم يُصدّق كيف يمكن لهذه الفتاة<br>
+      أن تكون دائمًا في مزاجٍ<br>
+      لاستقبال اجزاءه في اي وقت.
+    </div>
+
+    <div class="images-row" style="gap:16px; margin-top:40px;">
+      <img src="./images/body.jpg">
+      <img src="./images/gift.jpg">
+    </div>
+
+    <button class="small-btn" style="margin-top:45px;" onclick="next()">
+      ...
+    </button>
+  `;
+  }
+}  
   
 function next() {
   step++;
