@@ -579,589 +579,6 @@ else if (step === 24) {
 </button>
 
   `;
-} 
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>A Strange BirthDay</title>
-
-<style>
-body {
-  margin: 0;
-  font-family: "Georgia", serif;
-  overflow: hidden;
-}
-
-.scene {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  transition: background 0.6s ease, color 0.6s ease, transform 0.4s ease;
-}
-
-.scene-black { background: black; color: red; }
-.scene-red { background: red; color: black; }
-.scene-pink { background: pink; color: black; }
-  
-.title { font-size: 42px; letter-spacing: 2px; }
-.title span { font-size: 56px; display: block; }
-
-.subtitle {
-  font-size: 24px;
-  margin-top: 26px;
-  max-width: 850px;
-  line-height: 1.7;
-}
-
-.big-word {
-  font-size: 120px;
-  font-weight: bold;
-  letter-spacing: 8px;
-}
-
-button {
-  margin-top: 40px;
-  padding: 12px 28px;
-  font-size: 16px;
-  border: 1px solid currentColor;
-  background: transparent;
-  color: inherit;
-  cursor: pointer;
-}
-button:hover { opacity: 0.7; }
-
-.small-btn {
-  font-size: 15px;
-  padding: 8px 22px;
-  margin-top: 30px;
-}
-
-.card-buttons {
-  display: flex;
-  gap: 30px;
-  margin-top: 40px;
-}
-
-.scene img {
-  max-width: 30%;
-  max-height: 45vh;
-  width: auto;
-  margin-top: 24px;
-  border-radius: 6px;
-  opacity: 0;
-  animation: fadeIn 1.2s ease forwards;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-</style>
-</head>
-
-<body>
-<div id="scene" class="scene scene-black"></div>
-
-<script>
-let step = 0;
-const scene = document.getElementById("scene");
-
-function render() {
-
-  if (step === 0) {
-    scene.className = "scene scene-black";
-    scene.innerHTML = `
-      <div class="title">
-        A STRANGE DAY
-        <span>IN THE BIRTHDAY MEMORY WAREHOUSE<br>OF MR. CHERGUI A.</span>
-      </div>
-      <button onclick="next()">Let’s see what’s inside</button>
-    `;
-  }
-
-  else if (step === 1) {
-    scene.className = "scene scene-black";
-    scene.innerHTML = `
-      <div class="subtitle">
-        كان السيد شرقي الأكثر وسامة على هذه الأرض،
-        كاريزميًا وجذابًا، يراجع عددًا لا متناهيًا من رسائل البريد
-        الإلكتروني حول جودة المصانع والمتاجر العالمية في ولاية
-        كاليفورنيا، بينما يراقب الساعة أمامه باستمرار.
-      </div>
-      <img src="./images/ayoub1.jpg">
-      <button class="small-btn" onclick="next()">tick</button>
-    `;
-  }
-
-  else if (step === 2) {
-    scene.className = "scene scene-red";
-    scene.innerHTML = `
-      <div class="big-word">TOCK</div>
-      <button class="small-btn" onclick="next()">tick</button>
-    `;
-  }
-
-  else if (step === 3) {
-    scene.className = "scene scene-black";
-    scene.innerHTML = `
-      <div class="big-word">TOCK</div>
-      <div class="subtitle">
-        “Oh fuck.<br>
-        Finally.<br>
-        It’s 4 PM.<br>
-        And I can get the hell out of here.”
-      </div>
-      <button class="small-btn" onclick="lookRight()">Look to your right</button>
-    `;
-  }
-
-  else if (step === 4) {
-    scene.className = "scene scene-black";
-    scene.innerHTML = `
-      <div class="subtitle">
-        التقت أعين السيد شرقي بخاصة صديقه إلياس<br>
-        وقالا في نفس الوقت
-      </div>
-      <img src="./images/ilyas.jpg">
-      <div class="subtitle" style="margin-top:40px;">
-        YO boy let’s walk out together
-      </div>
-      <button class="small-btn" onclick="next()">غادر</button>
-    `;
-  }
-
-  else if (step === 5) {
-    scene.className = "scene scene-black";
-    scene.innerHTML = `
-      <div class="subtitle">
-        كان السيد شرقي يترنّح مع صديقه في الطرقات،
-        فقد أرادا الاحتفال بأيوب الكبير وبعيد ميلاده.
-      </div>
-      <img src="./images/metthedevil.jpg">
-      <div class="subtitle">
-        لكن في آخر الشارع ظهر شيءٌ لم يكن متوقعًا.<br><br>
-        شيطان.
-      </div>
-      <button class="small-btn" onclick="next()">اقترب منه</button>
-    `;
-  }
-
-  else if (step === 6) {
-    scene.className = "scene scene-red";
-    scene.innerHTML = `
-      <div class="subtitle">
-        نظر أيوب من حوله، لكنه لم يرَ صديقه إلياس،
-        ولا يعلم أين اختفى.
-      </div>
-      <div class="subtitle">
-        لكن الشيطان كان واقفًا أمامه بالفعل.
-      </div>
-      <div class="subtitle">
-        “Hello… I heard from a friend it’s your birthday.
-        Wanna do something fun about it?”
-      </div>
-      <button class="small-btn" onclick="next()">الحق به</button>
-    `;
-  }
-
-  else if (step === 7) {
-    scene.className = "scene scene-red";
-    scene.innerHTML = `
-      <div class="subtitle">
-        دخل السيد شرقي مع ما يعتقد أنه الشيطان
-        إلى حانةٍ لم يرها من قبل.
-      </div>
-      <img src="./images/girls.jpg">
-      <div class="subtitle">
-        راقصات… ساقيات… نادلات…
-      </div>
-      <div class="subtitle">
-        كان هو الرجل الوحيد هناك،
-        تحيط به آلاف الأجساد،
-        وكادت النظرات أن تثقب ملابسه.
-      </div>
-      <div class="subtitle" style="margin-top:40px;">
-        he gets anybody's eyes undressing him
-      </div>
-      <div class="subtitle">
-        لكن الجو خانق بالفعل
-      </div>
-      <button class="small-btn" onclick="next()">تحدث مع الشيطان</button>
-    `;
-  }
-
-  else if (step === 8) {
-    scene.className = "scene scene-black";
-    scene.innerHTML = `
-      <div class="subtitle">
-        قال أيوب:<br><br>
-        “What do you want?”
-      </div>
-      <div class="subtitle">
-        ابتسم الشيطان وقال:<br><br>
-        “I just want you to enjoy, buddy.”
-      </div>
-      <button class="small-btn" onclick="next()">cool</button>
-    `;
-  }
-
-  else if (step === 9) {
-    scene.className = "scene scene-black";
-    scene.innerHTML = `
-      <div class="subtitle">
-        قال الشيطان وهو يمدّ يده:
-      </div>
-      <div class="subtitle">
-        “It’s your lucky day.<br>
-        I usually give people one Joker card…<br>
-        But I’ll give you three.<br><br>
-        Choose the one that feels like you.”
-      </div>
-      <button class="small-btn" onclick="next()">حسنًا</button>
-    `;
-  }
-
-  else if (step === 10) {
-    scene.className = "scene scene-red";
-    scene.innerHTML = `
-      <div class="subtitle">
-        لكن لا تثق بحدسك…<br>
-        فالبشر عادةً يخسرون الكثير بسببه.
-      </div>
-      <div class="card-buttons">
-        <img src="./images/card1.jpg" onclick="chooseCard()">
-        <img src="./images/card2.jpg" onclick="chooseCard()">
-        <img src="./images/card3.jpg" onclick="chooseCard()">
-      </div>
-    `;
-  }
-
-  else if (step === 11) {
-    scene.className = "scene scene-black";
-    scene.innerHTML = `
-      <div class="subtitle">
-        أوه… لقد اخترت شيئًا بسيطًا.
-      </div>
-      <div class="subtitle">
-        وشم.
-      </div>
-      <div class="subtitle">
-        هل هذا ما كنت تبحث عنه يا سيد شرقي؟
-      </div>
-      <button class="small-btn" onclick="next()">
-        أنت تتدخل في أشياء لا تعنيك
-      </button>
-    `;
-  }
-
-  else if (step === 12) {
-    scene.className = "scene scene-red";
-    scene.innerHTML = `
-      <img src="./images/thedevil.jpg">
-      <button class="small-btn" onclick="next()">...</button>
-    `;
-  }
-
-  else if (step === 13) {
-    scene.className = "scene scene-black";
-    scene.innerHTML = `
-      <div class="subtitle">
-        وجد السيد شرقي نفسه خارج الحانة،
-        ملقىً على الأرض.
-      </div>
-      <div class="subtitle">
-        كان إلياس يهزه:<br><br>
-        صديقي… هل أنت بخير؟<br>
-        لقد فقدت وعيك فجأة.
-      </div>
-      <button class="small-btn" onclick="next()">
-        أنا… أنا بخير
-      </button>
-    `;
-  }
-
-  else if (step === 14) {
-    scene.className = "scene scene-black";
-    scene.innerHTML = `
-      <div class="subtitle" style="font-size:28px;">
-        هل أنت متأكد أنك بخير؟<br>
-        لقد غبت عن الوعي لبضع دقائق.
-      </div>
-      <div class="card-buttons" style="margin-top:50px;">
-        <button onclick="workStress()" style="font-size:18px; padding:14px 32px;">
-          لقد أثّر علي ضغط العمل
-        </button>
-        <button onclick="noSport()" style="font-size:18px; padding:14px 32px;">
-          لم أمارس منذ مدة
-        </button>
-      </div>
-    `;
-  }
-
-  else if (step === 15) {
-    scene.className = "scene scene-black";
-    scene.innerHTML = `
-      <div class="subtitle" style="font-size:28px;">
-        لا تضغط نفسك.<br>
-        حاول الاسترخاء هذه الأمسية.
-      </div>
-      <button class="small-btn" onclick="goToSharedScene()">
-        سأحرص على هذا
-      </button>
-    `;
-  }
-
-  else if (step === 16) {
-    scene.className = "scene scene-red";
-    scene.innerHTML = `
-      <img src="./images/smirk.jpg">
-
-      <div class="big-word" style="font-size:56px; margin-top:20px;">
-        i knew it…
-      </div>
-
-      <div class="subtitle">
-        you are not you<br>
-        when you are
-      </div>
-
-      <div class="big-word" style="font-size:64px; margin-top:10px;">
-        HORNY
-      </div>
-
-      <button class="small-btn" style="margin-top:40px;" onclick="goToSharedScene()">
-        hahahaha……
-      </button>
-    `;
-  }
-
-  else if (step === 17) {
-    scene.className = "scene scene-black";
-    scene.innerHTML = `
-      <div class="subtitle" style="font-size:28px;">
-        افترق السيد شرقي عن صديقه،<br>
-        وقد كان مشوش الذهن.
-      </div>
-      <button class="small-btn" onclick="next()">
-        اذهب إلى المنزل
-      </button>
-    `;
-  }
-
-   else if (step === 18) {
-    scene.className = "scene scene-black";
-    scene.innerHTML = `
-      <div class="subtitle">
-        وصل السيد شرقي المنزل بصعوبة،<br>
-        خصوصًا أن بصره كان يصبح ضبابيًا أحيانًا<br>
-        عندما كان يقود سيارته
-      </div>
-
-      <div class="subtitle">
-        Rolls-Royce Phantom
-      </div>
-
-      <div class="images-row">
-        <img src="./images/car.jpg">
-        <img src="./images/house.jpg">
-      </div>
-
-      <button class="small-btn" onclick="next()">
-        ادخل المنزل
-      </button>
-    `;
-  }
-
- else if (step === 19) {
-  scene.className = "scene scene-pink";
-  scene.innerHTML = `
-    <div class="decor">☁️ 🌸 🤍 ☁️ 🌸 🤍</div>
-
-    <div class="subtitle">
-      دخل السيد شرقي المنزل،<br>
-      وكان المكان هادئًا والأنوار خافتة.<br>
-      اتجه إلى غرفة نومه، فوجد زوجته<br>
-      استيقظت من النوم على وقع خطوات أقدامه.
-    </div>
-
-    <div class="subtitle" style="margin-top:30px; font-size:26px;">
-      daddy are you home ?
-    </div>
-
-    <img src="./images/mary.jpg">
-
-    <div class="buttons-row">
-      <button onclick="next()">قبّل رأسها</button>
-      <button onclick="next()">استلقِ بجانبها</button>
-    </div>
-
-
-    <div class="decor" style="margin-top:30px;">
-      🤍 🌸 ☁️ 🤍 🌸 ☁️
-    </div>
-  `;
-}
-
- else if (step === 20) {
-  scene.className = "scene scene-pink";
-  scene.innerHTML = `
-    <div class="decor">☁️ 🌸 🤍 ☁️ 🌸 🤍</div>
-
-    <div class="subtitle" style="color:black;">
-      انضمّ السيد شرقي إلى زوجته في الفراش،<br>
-      كان المكان دافئًا…<br>
-    </div>
-
-    <div class="subtitle" style="margin-top:30px; color:black;">
-      واجهته بنظراتها بهدوء،<br>
-      ثم قالت:
-    </div>
-
-    <div class="subtitle" style="margin-top:20px; font-size:26px; color:black;">
-      هل تريد أن تأكل؟
-    </div>
-
-    <button class="small-btn" style="margin-top:50px;" onclick="next()">
-      لست في مزاج يسمح… أنا متعب قليلًا
-    </button>
-
-    <div class="decor" style="margin-top:40px;">
-      🤍 🌸 ☁️ 🤍 🌸 ☁️
-    </div>
-  `;
-}
-
-else if (step === 21) {
-  scene.className = "scene scene-red";
-  scene.innerHTML = `
-    <div class="subtitle" style="color:black;">
-      توجّهت مريم إلى الزاوية في الغرفة،<br>
-      بعد أن أفلتت من حضن السيد شرقي.
-    </div>
-
-    <div class="subtitle" style="margin-top:30px; font-style:italic; color:black;">
-      "how about your birthday prisent"
-    </div>
-
-    <button
-      style="
-        margin-top:50px;
-        padding:14px 34px;
-        font-size:18px;
-        border:1px solid black;
-        background:transparent;
-        color:black;
-        cursor:pointer;
-      "
-      onclick="next()"
-    >
-      aren't you in a mood for it !؟
-    </button>
-  `;
-}
-
-else if (step === 22) {
-  scene.className = "scene scene-red";
-  scene.innerHTML = `
-    <div class="subtitle" style="color:black;">
-      أخذت عينا السيد شرقي تتّسعان،<br>
-      على أثر كشف مريم لطياتها.
-    </div>
-
-    <div class="subtitle" style="margin-top:26px; color:black;">
-      لم يُصدّق كيف يمكن لهذه الفتاة<br>
-      أن تكون دائمًا في مزاجٍ<br>
-      لاستقبال اجزاءه في اي وقت.
-    </div>
-
-    <div class="images-row" style="gap:20px; margin-top:48px;">
-      <img src="./images/body.jpg">
-      <img src="./images/gift.jpg">
-    </div>
-
-    <button class="small-btn" style="margin-top:45px;" onclick="next()">
-      ...
-    </button>
-  `;
-}  
-
-else if (step === 23) {
-  scene.className = "scene scene-red";
-  scene.innerHTML = `
-    <div class="subtitle" style="color:black; font-size:26px;">
-      بدأ السيد شرقي يحسّ باللهيب<br>
-      يندفع داخل شرايينه.
-    </div>
-
-    <img
-      src="./images/banana.jpg"
-      style="
-        max-width:42%;
-        max-height:55vh;
-        margin-top:40px;
-        border-radius:8px;
-      "
-    >
-
-    <button class="small-btn" style="margin-top:45px;" onclick="next()">
-      ...
-    </button>
-  `;
-} 
-
-else if (step === 24) {
-  scene.className = "scene scene-red";
-  scene.innerHTML = `
-    <div class="big-word" style="
-      font-size:64px;
-      color:black;
-      margin-bottom:36px;
-      letter-spacing:2px;
-    ">
-      god lord!<br>
-      have mercy ...
-    </div>
-
-    <div class="images-row" style="
-      gap:18px;
-      margin-top:10px;
-      margin-bottom:44px;
-    ">
-      <img src="./images/reaction1.jpg" style="
-        max-width:42%;
-        max-height:52vh;
-        border-radius:8px;
-      ">
-      <img src="./images/reaction2.jpg" style="
-        max-width:42%;
-        max-height:52vh;
-        border-radius:8px;
-      ">
-    </div>
-
-    <button
-  onclick="next()"
-  style="
-    margin-top:20px;
-    padding:18px 52px;
-    font-size:22px;
-    border:2px solid black;
-    background:transparent;
-    color:black;
-    cursor:pointer;
-    letter-spacing:1px;
-  "
->
-  انقض عليها
-</button>
-
-  `;
   }
 }
 
